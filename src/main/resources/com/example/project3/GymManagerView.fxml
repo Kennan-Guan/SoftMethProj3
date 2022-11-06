@@ -1,24 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3.GymManagerController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-   <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-     <tabs>
-       <Tab text="Information Hub">
-            <content>
-               <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" />
-            </content>
-       </Tab>
-     </tabs>
-   </TabPane>
-   <TextArea prefHeight="200.0" prefWidth="200.0" />
-</VBox>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project3.GymManagerController">
+  <tabs>
+    <Tab text="Membership">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="513.0" prefWidth="600.0">
+               <children>
+                  <Text layoutX="109.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+                  <Text layoutX="109.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+                  <Text layoutX="104.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" />
+                  <Text layoutX="114.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
+                  <Text layoutX="89.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Membership Type" />
+                  <Button layoutX="138.0" layoutY="232.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="124.0" text="Add" />
+                  <Button layoutX="344.0" layoutY="232.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="124.0" text="Remove" />
+                  <TextArea layoutX="20.0" layoutY="292.0" prefHeight="220.0" prefWidth="560.0" />
+                  <HBox alignment="CENTER" layoutX="198.0" layoutY="176.0" prefHeight="49.0" prefWidth="292.0">
+                     <children>
+                        <RadioButton mnemonicParsing="false" text="Standard">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="MembType" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Family" toggleGroup="$MembType">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Premium" toggleGroup="$MembType" />
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" layoutX="228.0" layoutY="14.0" prefHeight="166.0" prefWidth="232.0">
+                     <children>
+                        <TextField alignment="CENTER_RIGHT">
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField>
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <DatePicker>
+                           <VBox.margin>
+                              <Insets bottom="15.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                        <ComboBox prefWidth="150.0" promptText="Choose Location">
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="EDISON" />
+                                 <String fx:value="BRIDGEWATER" />
+                                 <String fx:value="PISCATAWAY" />
+                                 <String fx:value="SOMERVILLE" />
+                                 <String fx:value="FRANKLIN" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Fitness Class">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Text layoutX="116.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+                  <Text layoutX="116.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+                  <Text layoutX="111.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" />
+                  <Text layoutX="114.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Class Type" />
+                  <Text layoutX="119.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instructor" />
+                  <Text layoutX="121.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
+                  <VBox layoutX="323.0" layoutY="20.0" prefHeight="271.0" prefWidth="172.0">
+                     <children>
+                        <TextField>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <TextField>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <DatePicker>
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                        </DatePicker>
+                        <ComboBox prefWidth="150.0" promptText="Choose Class">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Pilates" />
+                                 <String fx:value="Spinning" />
+                                 <String fx:value="Cardio" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox prefWidth="150.0" promptText="Choose Instructor">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="Jennifer" />
+                                 <String fx:value="Kim" />
+                                 <String fx:value="Denise" />
+                                 <String fx:value="Davis" />
+                                 <String fx:value="Emma" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                        <ComboBox prefWidth="150.0" promptText="Choose Location">
+                           <VBox.margin>
+                              <Insets bottom="10.0" />
+                           </VBox.margin>
+                           <items>
+                              <FXCollections fx:factory="observableArrayList">
+                                 <String fx:value="EDISON" />
+                                 <String fx:value="BRIDGEWATER" />
+                                 <String fx:value="PISCATAWAY" />
+                                 <String fx:value="SOMERVILLE" />
+                                 <String fx:value="FRANKLIN" />
+                              </FXCollections>
+                           </items>
+                        </ComboBox>
+                     </children>
+                  </VBox>
+                  <TextArea layoutX="20.0" layoutY="298.0" prefHeight="214.0" prefWidth="560.0" />
+                  <HBox alignment="CENTER" layoutX="20.0" layoutY="229.0" prefHeight="61.0" prefWidth="560.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="100.0" text="Member Check In" textOverrun="CLIP">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="100.0" text="Member Check Out">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="100.0" text="Guest Check In">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="61.0" prefWidth="100.0" text="Guest Check Out">
+                           <HBox.margin>
+                              <Insets left="50.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

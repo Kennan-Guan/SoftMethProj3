@@ -230,7 +230,7 @@ public class MemberDatabase {
     public String printByName() {
         String output = "";
         if (this.size == 0) {
-            return "Member database is empty!" + "\n";
+            return "Member database is empty!";
         }
 
         for (int x = 0; x < this.size - 1; x++) {

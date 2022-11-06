@@ -1,4 +1,9 @@
 package com.example.project3;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  * Defines a schedule of fitness classes.
  * A class schedule is defined by a list of classes on the schedule and a counter to keep track of the classes in the list.
@@ -62,6 +67,32 @@ public class ClassSchedule {
      */
     public FitnessClass[] getClasses() {
         return classes;
+    }
+
+    /**
+     * This loads the fitness classes from a text file.
+     */
+    private void loadClasses() {
+        try {
+            Scanner sc = new Scanner(new File("src/classSchedule.txt"));
+
+            while (sc.hasNextLine()) {
+                String[] inputs = sc.nextLine().split("\\s+");
+                String classType = inputs[0].toUpperCase();
+                String instructor = inputs[1].toUpperCase();
+                Time time = Time.valueOf(inputs[2].toUpperCase());
+                Location gymLocation = Location.valueOf(inputs[3].toUpperCase());
+
+                this.addClass(new FitnessClass(time, instructor, classType, gymLocation));
+            }
+            System.out.println("-Fitness classes loaded-");
+            for (int i = 0; i < this.getSize(); i++) {
+                System.out.println(this.getClasses()[i].toString());
+            }
+            System.out.println("-end of class list.");
+        } catch (FileNotFoundException e) {
+            System.out.println("classSchedule.txt file not found.");
+        }
     }
 
     /**

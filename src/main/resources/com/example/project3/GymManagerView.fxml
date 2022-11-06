@@ -32,12 +32,12 @@
                   <Text layoutX="104.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" />
                   <Text layoutX="114.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Location" />
                   <Text layoutX="89.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Membership Type" />
-                  <Button layoutX="138.0" layoutY="232.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="124.0" text="Add" />
-                  <Button layoutX="344.0" layoutY="232.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="124.0" text="Remove" />
-                  <TextArea layoutX="20.0" layoutY="292.0" prefHeight="220.0" prefWidth="560.0" />
+                  <Button fx:id="addMembButton" layoutX="138.0" layoutY="232.0" mnemonicParsing="false" onAction="#addMember" prefHeight="36.0" prefWidth="124.0" text="Add" />
+                  <Button fx:id="removeMembButton" layoutX="344.0" layoutY="232.0" mnemonicParsing="false" onAction="#cancelMembership" prefHeight="36.0" prefWidth="124.0" text="Remove" />
+                  <TextArea fx:id="outputMembArea" layoutX="20.0" layoutY="292.0" prefHeight="220.0" prefWidth="560.0" />
                   <HBox alignment="CENTER" layoutX="198.0" layoutY="176.0" prefHeight="49.0" prefWidth="292.0">
                      <children>
-                        <RadioButton mnemonicParsing="false" text="Standard">
+                        <RadioButton fx:id="standardButton" mnemonicParsing="false" text="Standard">
                            <padding>
                               <Insets right="10.0" />
                            </padding>
@@ -45,35 +45,32 @@
                               <ToggleGroup fx:id="MembType" />
                            </toggleGroup>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Family" toggleGroup="$MembType">
+                        <RadioButton fx:id="familyButton" mnemonicParsing="false" text="Family" toggleGroup="$MembType">
                            <padding>
                               <Insets right="10.0" />
                            </padding>
                         </RadioButton>
-                        <RadioButton mnemonicParsing="false" text="Premium" toggleGroup="$MembType" />
+                        <RadioButton fx:id="premiumButton" mnemonicParsing="false" text="Premium" toggleGroup="$MembType" />
                      </children>
                   </HBox>
                   <VBox alignment="CENTER" layoutX="228.0" layoutY="14.0" prefHeight="166.0" prefWidth="232.0">
                      <children>
-                        <TextField alignment="CENTER_RIGHT">
-                           <padding>
-                              <Insets bottom="10.0" />
-                           </padding>
+                        <TextField fx:id="firstName">
                            <VBox.margin>
                               <Insets bottom="15.0" />
                            </VBox.margin>
                         </TextField>
-                        <TextField>
+                        <TextField fx:id="lastName">
                            <VBox.margin>
                               <Insets bottom="15.0" />
                            </VBox.margin>
                         </TextField>
-                        <DatePicker>
+                        <DatePicker fx:id="dateOfBirth">
                            <VBox.margin>
                               <Insets bottom="15.0" />
                            </VBox.margin>
                         </DatePicker>
-                        <ComboBox prefWidth="150.0" promptText="Choose Location">
+                        <ComboBox fx:id="membLocation" prefWidth="150.0" promptText="Choose Location">
                            <items>
                               <FXCollections fx:factory="observableArrayList">
                                  <String fx:value="EDISON" />

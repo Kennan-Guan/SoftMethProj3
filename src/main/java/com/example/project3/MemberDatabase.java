@@ -1,4 +1,9 @@
 package com.example.project3;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 /**
  * Defines the Member Database for the entire fitness chain.
  * The database is implemented as a resizable array, and the class implements methods to increase
@@ -262,5 +267,24 @@ public class MemberDatabase {
         }
         output += "-end of list-" + "\n";
         return output;
+    }
+
+    /**
+     * This method loads the member list from a text file.
+     */
+    private void bulkLoad() {
+        try {
+            Scanner readMem = new Scanner(new File("src/memberList.txt"));
+            while (readMem.hasNextLine()) {
+                Member newMem = new Member(readMem.nextLine());
+                this.add(newMem);
+            }
+            System.out.println("-list of members loaded-");
+            this.print();
+            System.out.println("-end of list-");
+            System.out.println();
+        } catch (FileNotFoundException e) {
+            System.out.println("memberList.txt file not found");
+        }
     }
 }

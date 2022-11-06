@@ -72,7 +72,7 @@ public class ClassSchedule {
     /**
      * This loads the fitness classes from a text file.
      */
-    private void loadClasses() {
+    public void loadClasses() {
         try {
             Scanner sc = new Scanner(new File("src/classSchedule.txt"));
 

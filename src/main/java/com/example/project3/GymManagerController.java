@@ -488,6 +488,8 @@ public class GymManagerController {
         }
     }
 
+
+
     @FXML
     private Label welcomeText;
 

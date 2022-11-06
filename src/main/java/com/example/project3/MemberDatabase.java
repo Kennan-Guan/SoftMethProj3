@@ -272,7 +272,7 @@ public class MemberDatabase {
     /**
      * This method loads the member list from a text file.
      */
-    private void bulkLoad() {
+    public void bulkLoad() {
         try {
             Scanner readMem = new Scanner(new File("src/memberList.txt"));
             while (readMem.hasNextLine()) {

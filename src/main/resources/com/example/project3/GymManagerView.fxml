@@ -199,15 +199,15 @@
         <content>
            <AnchorPane prefHeight="200.0" prefWidth="200.0">
               <children>
-                 <MenuBar>
+                 <MenuBar layoutX="96.0" layoutY="-3.0">
                     <menus>
                        <Menu mnemonicParsing="false" text="Member Database">
                           <items>
-                             <MenuItem mnemonicParsing="false" text="Print" />
-                             <MenuItem mnemonicParsing="false" text="Print By County" />
-                             <MenuItem mnemonicParsing="false" text="Print By Expiration Date" />
-                             <MenuItem mnemonicParsing="false" text="Print By Name" />
-                             <MenuItem mnemonicParsing="false" text="Print By Membership Fee" />
+                             <MenuItem mnemonicParsing="false" onAction="#printDefault" text="Print" />
+                             <MenuItem mnemonicParsing="false" onAction="#printByCounty" text="Print By County" />
+                             <MenuItem mnemonicParsing="false" onAction="#printByExpiration" text="Print By Expiration Date" />
+                             <MenuItem mnemonicParsing="false" onAction="#printByName" text="Print By Name" />
+                             <MenuItem mnemonicParsing="false" onAction="#printByFee" text="Print By Membership Fee" />
                              <MenuItem mnemonicParsing="false" text="Load Members from File" />
                           </items>
                        </Menu>
@@ -222,7 +222,7 @@
                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                     </padding>
                  </MenuBar>
-                  <TextArea layoutX="49.0" layoutY="59.0" />
+                  <TextArea fx:id="informationText" layoutX="49.0" layoutY="59.0" />
               </children>
            </AnchorPane>
         </content>

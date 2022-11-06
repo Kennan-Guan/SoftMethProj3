@@ -1,4 +1,4 @@
-package fitness2;
+package com.example.project3;
 /**
  * Defines a schedule of fitness classes.
  * A class schedule is defined by a list of classes on the schedule and a counter to keep track of the classes in the list.

@@ -1,4 +1,4 @@
-package fitness2;
+package com.example.project3;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.File;

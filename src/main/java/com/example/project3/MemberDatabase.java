@@ -1,4 +1,4 @@
-package fitness2;
+package com.example.project3;
 /**
  * Defines the Member Database for the entire fitness chain.
  * The database is implemented as a resizable array, and the class implements methods to increase
@@ -121,30 +121,34 @@ public class MemberDatabase {
      * Prints the member database as is, with each Member object being printed out on a new line.
      * Uses the Member class toString() method to print out all necessary Member object information.
      */
-    public void print() {
+    public String print() {
+        String output = "";
+
         if (this.size == 0) {
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!";
         }
         if (this.size == 1 || this.size == MAXFITNESSPARTICIPANTS) {
             for (int x = 0; x < this.size; x++) {
-                System.out.println("       " + this.mlist[x].toString());
+                output += "       " + this.mlist[x].toString() + "\n";
             }
-            return;
+            return output;
         }
         for (int x = 0; x < this.size; x++) {
-            System.out.println(this.mlist[x].toString());
+            output += this.mlist[x].toString() + "\n";
         }
+
+        return output;
     } //print the array contents as is
 
     /**
      * Implements bubble sort to sort the database by Date of birth from earliest DOB to latest DOB.
      * Calls print() method once the sorting is complete.
      */
-    public void printByCounty() {
+    public String printByCounty() {
+        String output = "";
+
         if (this.size == 0) {
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!";
         }
         for (int x = 0; x < this.size - 1; x++) {
             for (int y = 0; y < this.size - x - 1; y++) {
@@ -176,21 +180,23 @@ public class MemberDatabase {
                     }
             }
         }
-        System.out.println("-list of members sorted by county and zipcode-");
+        output += "-list of members sorted by county and zipcode-\n";
         for (int x = 0; x < this.size; x++) {
-            System.out.println(this.mlist[x].toString());
+            output += this.mlist[x].toString() + "\n";
         }
-        System.out.println("-end of list-" + "\n");
+        output += "-end of list-" + "\n";
+        return output;
     } //sort by county and then zipcode
 
     /**
      * Implements bubble sort to sort the database by expiration date, from the earliest expiration
      * date to the latest expiration date. Calls print() method once sorting is complete.
      */
-    public void printByExpirationDate() {
+    public String printByExpirationDate() {
+        String output = "";
+
         if (this.size == 0) {
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!";
         }
 
         for (int x = 0; x < this.size - 1; x++) {
@@ -203,23 +209,23 @@ public class MemberDatabase {
             }
         }
 
-        System.out.println();
-        System.out.println("-list of members sorted by membership expiration date-");
+        output += "-list of members sorted by membership expiration date-\n";
         for (int x = 0; x < this.size; x++) {
-            System.out.println(this.mlist[x].toString());
+            output += this.mlist[x].toString() + "\n";
         }
-        System.out.println("-end of list-");
-        System.out.println();
+        output += "-end of list-" + "\n";
+
+        return output;
     } //sort by the expiration date
 
     /**
      * Implement bubble sort to alphabetically sort the database by last name, and then first name
      * if last names are the same. Calls print() method once sorting is complete.
      */
-    public void printByName() {
+    public String printByName() {
+        String output = "";
         if (this.size == 0) {
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!" + "\n";
         }
 
         for (int x = 0; x < this.size - 1; x++) {
@@ -231,30 +237,30 @@ public class MemberDatabase {
                 }
             }
         }
-        System.out.println();
-        System.out.println("-list of members sorted by last name, and first name-");
+        output += "-list of members sorted by last name, and first name-\n";
         for (int x = 0; x < this.size; x++) {
-            System.out.println(this.mlist[x].toString());
+            output += this.mlist[x].toString() + "\n";
         }
-        System.out.println("-end of list-");
-        System.out.println();
+        output += "-end of list-" + "\n";
+        return output;
     } //sort by last name and then first name
 
     /**
      * This method prints the database as is with the membership fee of each member also printed.
      * Uses Member class toString() method to return textual representation of each member, along with membership fee.
      */
-    public void printWithMembershipFee() {
+    public String printWithMembershipFee() {
+        String output = "";
+
         if (this.size == 0) {
-            System.out.println("Member database is empty!");
-            return;
+            return "Member database is empty!";
         }
 
-        System.out.println("-list of members with membership fees-");
+        output += "-list of members with membership fees-\n";
         for (int x = 0; x < this.size; x++) {
-            System.out.println(this.mlist[x].toString() + ", Membership fee: " + this.mlist[x].membershipFee());
+           output+= this.mlist[x].toString() + ", Membership fee: " + this.mlist[x].membershipFee() + "\n";
         }
-        System.out.println("-end of list-");
-        System.out.println();
+        output += "-end of list-" + "\n";
+        return output;
     }
 }

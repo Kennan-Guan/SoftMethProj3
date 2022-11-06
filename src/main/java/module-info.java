@@ -3,6 +3,6 @@ module com.example.softmethprojfx {
     requires javafx.fxml;
 
 
-    opens com.example.softmethprojfx to javafx.fxml;
-    exports com.example.softmethprojfx;
+    opens com.example.project3 to javafx.fxml;
+    exports com.example.project3;
 }

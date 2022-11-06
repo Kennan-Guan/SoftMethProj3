@@ -1,4 +1,4 @@
-package fitness2;
+package com.example.project3;
 /**
  * Defines a Premium member to be a part of the gym.
  * This class is a Generalization subclass of the Family class. There are no additional instance variables in this subclass.

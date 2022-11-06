@@ -1,4 +1,4 @@
-package fitness2;
+package com.example.project3;
 /**
  * Defines a member object to be a part of a gym.
  * Implements compareTo(), toString(), and equals() methods for comparing and representing members,

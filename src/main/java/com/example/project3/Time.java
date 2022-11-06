@@ -1,4 +1,4 @@
-package fitness2;
+package com.example.project3;
 import java.text.DecimalFormat;
 /**
  * Defines the times of the set fitness classes as morning and afternoon fitness class sessions.

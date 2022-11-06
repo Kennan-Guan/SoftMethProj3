@@ -1,4 +1,4 @@
-package fitness2;
+package com.example.project3;
 import java.util.Calendar;
 /**
  * Defines the date object by splitting a string into three integer values - day, month, and year.

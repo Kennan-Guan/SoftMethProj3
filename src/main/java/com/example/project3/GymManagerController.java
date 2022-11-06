@@ -1,4 +1,4 @@
-package com.example.softmethprojfx;
+package com.example.project3;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

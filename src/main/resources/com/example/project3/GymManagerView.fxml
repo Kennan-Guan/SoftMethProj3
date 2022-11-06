@@ -208,13 +208,13 @@
                              <MenuItem mnemonicParsing="false" onAction="#printByExpiration" text="Print By Expiration Date" />
                              <MenuItem mnemonicParsing="false" onAction="#printByName" text="Print By Name" />
                              <MenuItem mnemonicParsing="false" onAction="#printByFee" text="Print By Membership Fee" />
-                             <MenuItem mnemonicParsing="false" text="Load Members from File" />
+                             <MenuItem mnemonicParsing="false" onAction="#bulkLoad" text="Load Members from File" />
                           </items>
                        </Menu>
                        <Menu mnemonicParsing="false" text="Class Schedule">
                           <items>
-                             <MenuItem mnemonicParsing="false" text="Show all Fitness Classes" />
-                             <MenuItem mnemonicParsing="false" text="Load Class Schedule from File" />
+                             <MenuItem mnemonicParsing="false" onAction="#printClasses" text="Show all Fitness Classes" />
+                             <MenuItem mnemonicParsing="false" onAction="#loadClasses" text="Load Class Schedule from File" />
                           </items>
                        </Menu>
                     </menus>

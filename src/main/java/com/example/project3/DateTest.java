@@ -1,5 +1,5 @@
 package com.example.project3;
-import org.junit.jupiter.api.Test;
+import org.testng.annotations.Test;
 import static org.junit.jupiter.api.Assertions.*;
 /**
  * JUnit test method for the Date class.

@@ -205,7 +205,7 @@
                               <MenuItem mnemonicParsing="false" onAction="#printByExpiration" text="Print By Expiration Date" />
                               <MenuItem mnemonicParsing="false" onAction="#printByName" text="Print By Name" />
                               <MenuItem mnemonicParsing="false" onAction="#printByFee" text="Print By Membership Fee" />
-                              <MenuItem mnemonicParsing="false" onAction="#bulkLoad" text="Load Members from File" />
+                              <MenuItem mnemonicParsing="false" onAction="#loadMem" text="Load Members from File" />
                            </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Class Schedule">

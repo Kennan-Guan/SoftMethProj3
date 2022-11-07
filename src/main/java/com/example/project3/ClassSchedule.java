@@ -70,38 +70,12 @@ public class ClassSchedule {
     }
 
     /**
-     * This loads the fitness classes from a text file.
-     */
-    public void loadClasses() {
-        try {
-            Scanner sc = new Scanner(new File("src/classSchedule.txt"));
-
-            while (sc.hasNextLine()) {
-                String[] inputs = sc.nextLine().split("\\s+");
-                String classType = inputs[0].toUpperCase();
-                String instructor = inputs[1].toUpperCase();
-                Time time = Time.valueOf(inputs[2].toUpperCase());
-                Location gymLocation = Location.valueOf(inputs[3].toUpperCase());
-
-                this.addClass(new FitnessClass(time, instructor, classType, gymLocation));
-            }
-            System.out.println("-Fitness classes loaded-");
-            for (int i = 0; i < this.getSize(); i++) {
-                System.out.println(this.getClasses()[i].toString());
-            }
-            System.out.println("-end of class list.");
-        } catch (FileNotFoundException e) {
-            System.out.println("classSchedule.txt file not found.");
-        }
-    }
-
-    /**
      * This method prints the class schedules.
      */
     public String printClasses() {
         String output = "";
         if (numClasses == 0) {
-            return "Fitness class schedule is empty.\n";
+            return "Fitness class schedule is empty.\n\n";
         }
         else {
             output += "-Fitness classes-\n";
@@ -125,7 +99,7 @@ public class ClassSchedule {
                 }
 
             }
-            output += "-end of class list.\n";
+            output += "-end of class list.\n\n";
         }
         return output;
     }
@@ -148,7 +122,7 @@ public class ClassSchedule {
             for (int i = 0; i < this.getSize(); i++) {
                 output += this.getClasses()[i].toString() + "\n";
             }
-            output += "-end of class list.\n";
+            output += "-end of class list.\n\n";
             return output;
         } catch (FileNotFoundException e) {
             return "classSchedule.txt file not found.\n";

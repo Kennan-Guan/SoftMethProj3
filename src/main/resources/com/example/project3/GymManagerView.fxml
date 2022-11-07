@@ -65,7 +65,7 @@
                               <Insets bottom="15.0" />
                            </VBox.margin>
                         </TextField>
-                        <DatePicker fx:id="dateOfBirth">
+                        <DatePicker fx:id="dateOfBirth" editable="false">
                            <VBox.margin>
                               <Insets bottom="15.0" />
                            </VBox.margin>
@@ -108,7 +108,7 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <DatePicker fx:id="dateOfBirthFitness">
+                        <DatePicker fx:id="dateOfBirthFitness" editable="false">
                            <VBox.margin>
                               <Insets bottom="10.0" />
                            </VBox.margin>

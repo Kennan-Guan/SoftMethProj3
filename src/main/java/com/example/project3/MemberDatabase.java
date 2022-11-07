@@ -127,7 +127,7 @@ public class MemberDatabase {
         String output = "";
 
         if (this.size == 0) {
-            return "Member database is empty!";
+            return "Member database is empty!\n\n";
         }
         if (this.size == 1 || this.size == MAXFITNESSPARTICIPANTS) {
             for (int x = 0; x < this.size; x++) {
@@ -150,7 +150,7 @@ public class MemberDatabase {
         String output = "";
 
         if (this.size == 0) {
-            return "Member database is empty!";
+            return "Member database is empty!\n\n";
         }
         for (int x = 0; x < this.size - 1; x++) {
             for (int y = 0; y < this.size - x - 1; y++) {
@@ -198,7 +198,7 @@ public class MemberDatabase {
         String output = "";
 
         if (this.size == 0) {
-            return "Member database is empty!";
+            return "Member database is empty!\n\n";
         }
 
         for (int x = 0; x < this.size - 1; x++) {
@@ -227,7 +227,7 @@ public class MemberDatabase {
     public String printByName() {
         String output = "";
         if (this.size == 0) {
-            return "Member database is empty!";
+            return "Member database is empty!\n\n";
         }
 
         for (int x = 0; x < this.size - 1; x++) {
@@ -255,7 +255,7 @@ public class MemberDatabase {
         String output = "";
 
         if (this.size == 0) {
-            return "Member database is empty!";
+            return "Member database is empty!\n\n";
         }
 
         output += "-list of members with membership fees-\n";

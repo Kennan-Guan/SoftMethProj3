@@ -1,3 +1,8 @@
+/**
+ * Main class that launches the GUI for GymManager.
+ * @author Kennan Guan, Adwait Ganguly
+ */
+
 package com.example.project3;
 
 import javafx.application.Application;

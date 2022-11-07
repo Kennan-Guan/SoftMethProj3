@@ -1,3 +1,9 @@
+/**
+ * Controller class for GymManager that defines all attributes involved in the GUI and
+ * the methods to connect inputs with the GUI to the GymManager model classes.
+ * @author Kennan Guan, Adwait Ganguly
+ */
+
 package com.example.project3;
 
 import javafx.event.ActionEvent;
@@ -596,6 +602,9 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * Method to initialize the member database and class schedule objects
+     */
     @FXML
     void initialize() {
         assert MembType != null : "fx:id=\"MembType\" was not injected: check your FXML file 'GymManagerView.fxml'.";

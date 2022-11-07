@@ -1,23 +1,18 @@
+package com.example.project3;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
 /**
  * Controller class for GymManager that defines all attributes involved in the GUI and
  * the methods to connect inputs with the GUI to the GymManager model classes.
  * @author Kennan Guan, Adwait Ganguly
  */
-
-package com.example.project3;
-
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.*;
 public class GymManagerController {
 
     MemberDatabase database;
     ClassSchedule listOfClasses;
 
     private static final int STANDARDEXPIRATION = 4;
-
-    @FXML
-    private Button addMembButton;
 
     @FXML
     private DatePicker dateOfBirth;
@@ -36,9 +31,6 @@ public class GymManagerController {
 
     @FXML
     private RadioButton premiumButton;
-
-    @FXML
-    private Button removeMembButton;
 
     @FXML
     private RadioButton standardButton;
@@ -74,9 +66,11 @@ public class GymManagerController {
 
     /**
      * Method to print list of members
+     *
+     * @param event is an ActionEvent that is initialized when the Print button is clicked on the GUI in the Information Hub.
      */
     @FXML
-    private void printDefault() {
+    private void printDefault(ActionEvent event) {
         if (database.isEmpty()) {
             informationText.appendText(database.print());
         }
@@ -87,57 +81,71 @@ public class GymManagerController {
 
     /**
      * Method to print list of members sorted alphabetically.
+     *
+     * @param event is an ActionEvent that is initialized when the Print By Name button is clicked on the GUI in the Information Hub.
      */
     @FXML
-    private void printByName() {
+    private void printByName(ActionEvent event) {
         informationText.appendText("\n" + database.printByName());
     }
 
     /**
      * Method to print list of members sorted by county
+     *
+     * @param event is an ActionEvent that is initialized when the Print By County button is clicked on the GUI in the Information Hub.
      */
     @FXML
-    private void printByCounty() {
+    private void printByCounty(ActionEvent event) {
         informationText.appendText("\n" + database.printByCounty());
     }
 
     /**
-     * Method to print list of members sorted by expiration date
+     * Method to print list of members sorted by expiration date.
+     *
+     * @param event is an ActionEvent that is initialized when the Print By Expiration Date button is clicked on the GUI in the Information Hub.
      */
     @FXML
-    private void printByExpiration() {
+    private void printByExpiration(ActionEvent event) {
         informationText.appendText("\n" + database.printByExpirationDate());
     }
 
     /**
      * Method to print list of members with membership fees.
+     *
+     * @param event is an ActionEvent that is initialized when the Print With Membership Fee button is clicked on the GUI in the Information Hub.
      */
     @FXML
-    private void printWithFee() {
+    private void printWithFee(ActionEvent event) {
         informationText.appendText("\n" + database.printWithMembershipFee());
     }
 
     /**
-     * Method to load fitness classes from a text file and print the classes loaded
+     * Method to load fitness classes from a text file and print the classes loaded.
+     *
+     * @param event is an ActionEvent that is initialized when the Load Class Schedule from File button is clicked on the GUI in the Information Hub.
      */
     @FXML
-    private void loadClasses() {
+    private void loadClasses(ActionEvent event) {
         informationText.appendText(listOfClasses.loadFitnessClasses());
     }
 
     /**
      * Method to print the fitness classes
+     *
+     * @param event is an ActionEvent that is initialized when the Show all Fitness Classes button is clicked on the GUI in the Information Hub.
      */
     @FXML
-    private void printClasses() {
+    private void printClasses(ActionEvent event) {
         informationText.appendText(listOfClasses.printClasses());
     }
 
     /**
-     * Method to load members from a text file and print them
+     * Method to load members from a text file and print them.
+     *
+     * @param event is an ActionEvent that is initialized when the Load Members from File button is clicked on the GUI in the Information Hub.
      */
     @FXML
-    private void loadMem() {
+    private void loadMem(ActionEvent event) {
         informationText.appendText(database.bulkLoad());
     }
 
@@ -145,7 +153,7 @@ public class GymManagerController {
      * Method to add inputted members into the database.
      * Will call related methods depending on member type.
      * Will reject if any fields are empty and print error message.
-     * @param event
+     * @param event is an event that is initialized when the Add button is clicked on the GUI
      */
     @FXML
     private void addMember(ActionEvent event) {
@@ -269,6 +277,8 @@ public class GymManagerController {
 
     /**
      * Helper method that cancels and removes a member from the member database.
+     *
+     * @param event is an ActionEvent that is initialized when the Remove button is clicked on the GUI.
      */
     @FXML
     private void cancelMembership(ActionEvent event) {
@@ -291,9 +301,11 @@ public class GymManagerController {
 
     /**
      * Method that adds a new member into a specified fitness class.
+     *
+     * @param event is is an ActionEvent that is initialized when the Member Check In button is clicked on the GUI in the Fitness Class tab.
      */
     @FXML
-    private void checkIn() {
+    private void checkIn(ActionEvent event) {
         if (!checkFields()) { return; }
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();
@@ -439,9 +451,11 @@ public class GymManagerController {
 
     /**
      * Method that removes a member from a specified fitness class.
+     *
+     * @param event is an ActionEvent that is initialized when the Member Check Out button is clicked on the GUI in the Fitness Class tab.
      */
     @FXML
-    private void checkOut() {
+    private void checkOut(ActionEvent event) {
         if (!checkFields()) { return; }
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();
@@ -472,9 +486,11 @@ public class GymManagerController {
 
     /**
      * Method that adds a new guest into a specified fitness class.
+     *
+     * @param event is an ActionEvent that is initialized when the Guest Check In button is clicked on the GUI in the Fitness tab.
      */
     @FXML
-    private void guestCheckIn() {
+    private void guestCheckIn(ActionEvent event) {
         if (!checkFields()) { return; }
 
         String fName = firstNameFitness.getText();
@@ -570,9 +586,11 @@ public class GymManagerController {
 
     /**
      * Method that removes a guest from a specified fitness class.
+     *
+     * @param event is an ActionEvent that is initialized when the Guest Check Out button is clicked on the GUI in the Fitness Tab.
      */
     @FXML
-    private void guestCheckOut() {
+    private void guestCheckOut(ActionEvent event) {
         if (!checkFields()) { return; }
 
         String fName = firstNameFitness.getText();
@@ -603,7 +621,7 @@ public class GymManagerController {
     }
 
     /**
-     * Method to initialize the member database and class schedule objects
+     * Method to initialize the member database and class schedule objects.
      */
     @FXML
     void initialize() {

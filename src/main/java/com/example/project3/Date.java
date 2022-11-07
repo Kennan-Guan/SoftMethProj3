@@ -54,7 +54,7 @@ public class Date implements Comparable<Date> {
     /**
      * Constructs a date object given a date in format "YYYY-MM-DD".
      * @param date a date in format "YYYY-MM-DD"
-     * @param DatePickerTrue variable for constructing a date due to formatting of DatePicker
+     * @param DatePickerTrue variable for constructing a date based on the formatting of DatePicker toString() method.
      */
     public Date(String date, int DatePickerTrue) {
         String[] split_date = date.split("-");

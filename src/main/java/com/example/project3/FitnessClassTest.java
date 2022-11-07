@@ -1,10 +1,7 @@
 package com.example.project3;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * JUnit test method for FitnessClass.
  * Tests add and removal of guests and members.

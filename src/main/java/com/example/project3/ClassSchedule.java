@@ -129,4 +129,29 @@ public class ClassSchedule {
         }
         return output;
     }
+
+    public String loadFitnessClasses() {
+        try {
+            String output = "";
+            Scanner sc = new Scanner(new File("src/main/java/classSchedule.txt"));
+
+            while (sc.hasNextLine()) {
+                String[] inputs = sc.nextLine().split("\\s+");
+                String classType = inputs[0].toUpperCase();
+                String instructor = inputs[1].toUpperCase();
+                Time time = Time.valueOf(inputs[2].toUpperCase());
+                Location gymLocation = Location.valueOf(inputs[3].toUpperCase());
+
+                this.addClass(new FitnessClass(time, instructor, classType, gymLocation));
+            }
+            output += "-Fitness classes loaded-\n";
+            for (int i = 0; i < this.getSize(); i++) {
+                output += this.getClasses()[i].toString() + "\n";
+            }
+            output += "-end of class list.\n";
+            return output;
+        } catch (FileNotFoundException e) {
+            return "classSchedule.txt file not found.\n";
+        }
+    }
 }

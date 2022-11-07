@@ -205,9 +205,9 @@ public class GymManagerController {
     private void cancelMembership(ActionEvent event) {
         String fName = firstName.getText();
         String lName = lastName.getText();
-        Date dayOfBirth = new Date(dateOfBirth.getAccessibleText());
+        Date dayOfBirth = new Date(dateOfBirth.getValue().toString(), 1);
 
-        Member entry = new Member(fName, lName, dateOfBirth.getAccessibleText());
+        Member entry = new Member(fName, lName, dayOfBirth.toString());
         if (database.remove(entry)) {
             outputMembArea.appendText(fName + " " + lName + " removed." + "\n");
             outputMembArea.appendText("\n");
@@ -215,7 +215,6 @@ public class GymManagerController {
             outputMembArea.appendText(fName + " " + lName + " is not in the database.");
         }
     }
-
 
     @FXML
     void initialize() {

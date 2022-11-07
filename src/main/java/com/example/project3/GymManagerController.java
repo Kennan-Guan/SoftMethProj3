@@ -263,6 +263,13 @@ public class GymManagerController {
      */
     @FXML
     private void checkIn() {
+        if (firstNameFitness.getText().isEmpty() || lastNameFitness.getText().isEmpty() || dateOfBirthFitness.getValue() == null
+                || classType.getSelectionModel().getSelectedItem() == null || gymLocation.getSelectionModel().getSelectedItem() == null
+                ||  fitnessInstructor.getSelectionModel().getSelectedItem() == null) {
+            fitnessText.appendText("Please fill in all information!\n");
+            return;
+        }
+
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();
         Date DOB = new Date(dateOfBirthFitness.getValue().toString(), 1);
@@ -274,7 +281,7 @@ public class GymManagerController {
         Member storedEntry = database.isMemberInArray(entry);
         Date today = new Date();
 
-        if(validClass(className) && validGym(gym) && validInstructor(instructor)) {
+        if (validClass(className) && validGym(gym) && validInstructor(instructor)) {
             if (!DOB.isValid()) {
                 fitnessText.appendText("DOB " + DOB + ": invalid calendar date!\n");
             } else if (storedEntry == null) {
@@ -395,6 +402,13 @@ public class GymManagerController {
 
     @FXML
     private void checkOut() {
+        if (firstNameFitness.getText().isEmpty() || lastNameFitness.getText().isEmpty() || dateOfBirthFitness.getValue() == null
+                || classType.getSelectionModel().getSelectedItem() == null || gymLocation.getSelectionModel().getSelectedItem() == null
+                ||  fitnessInstructor.getSelectionModel().getSelectedItem() == null) {
+            fitnessText.appendText("Please fill in all information!\n");
+            return;
+        }
+
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();
         Date DOB = new Date(dateOfBirthFitness.getValue().toString(), 1);
@@ -424,6 +438,13 @@ public class GymManagerController {
 
     @FXML
     private void guestCheckIn() {
+        if (firstNameFitness.getText().isEmpty() || lastNameFitness.getText().isEmpty() || dateOfBirthFitness.getValue() == null
+                || classType.getSelectionModel().getSelectedItem() == null || gymLocation.getSelectionModel().getSelectedItem() == null
+                ||  fitnessInstructor.getSelectionModel().getSelectedItem() == null) {
+            fitnessText.appendText("Please fill in all information!\n");
+            return;
+        }
+
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();
         Date DOB = new Date(dateOfBirthFitness.getValue().toString(), 1);
@@ -517,6 +538,13 @@ public class GymManagerController {
 
     @FXML
     private void guestCheckOut() {
+        if (firstNameFitness.getText().isEmpty() || lastNameFitness.getText().isEmpty() || dateOfBirthFitness.getValue() == null
+                || classType.getSelectionModel().getSelectedItem() == null || gymLocation.getSelectionModel().getSelectedItem() == null
+                ||  fitnessInstructor.getSelectionModel().getSelectedItem() == null) {
+            fitnessText.appendText("Please fill in all information!\n");
+            return;
+        }
+
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();
         Date DOB = new Date(dateOfBirthFitness.getValue().toString(), 1);

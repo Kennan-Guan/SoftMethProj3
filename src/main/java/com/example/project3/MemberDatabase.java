@@ -122,6 +122,7 @@ public class MemberDatabase {
     /**
      * Prints the member database as is, with each Member object being printed out on a new line.
      * Uses the Member class toString() method to print out all necessary Member object information.
+     * @return a string containing all members in the database.
      */
     public String print() {
         String output = "";
@@ -143,8 +144,9 @@ public class MemberDatabase {
     } //print the array contents as is
 
     /**
-     * Implements bubble sort to sort the database by Date of birth from earliest DOB to latest DOB.
+     * Implements bubble sort to sort the database by county.
      * Calls print() method once the sorting is complete.
+     * @return a string containing all members sorted by county.
      */
     public String printByCounty() {
         String output = "";
@@ -193,6 +195,7 @@ public class MemberDatabase {
     /**
      * Implements bubble sort to sort the database by expiration date, from the earliest expiration
      * date to the latest expiration date. Calls print() method once sorting is complete.
+     * @return a string containing all members sorted by expiration date.
      */
     public String printByExpirationDate() {
         String output = "";
@@ -223,6 +226,7 @@ public class MemberDatabase {
     /**
      * Implement bubble sort to alphabetically sort the database by last name, and then first name
      * if last names are the same. Calls print() method once sorting is complete.
+     * @return a string containing all members sorted by name.
      */
     public String printByName() {
         String output = "";
@@ -250,6 +254,7 @@ public class MemberDatabase {
     /**
      * This method prints the database as is with the membership fee of each member also printed.
      * Uses Member class toString() method to return textual representation of each member, along with membership fee.
+     * @return a string contaning all members with membership fees.
      */
     public String printWithMembershipFee() {
         String output = "";

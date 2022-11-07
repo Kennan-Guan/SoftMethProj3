@@ -204,7 +204,7 @@
                               <MenuItem mnemonicParsing="false" onAction="#printByCounty" text="Print By County" />
                               <MenuItem mnemonicParsing="false" onAction="#printByExpiration" text="Print By Expiration Date" />
                               <MenuItem mnemonicParsing="false" onAction="#printByName" text="Print By Name" />
-                              <MenuItem mnemonicParsing="false" onAction="#printByFee" text="Print By Membership Fee" />
+                              <MenuItem mnemonicParsing="false" onAction="#printWithFee" text="Print With Membership Fee" />
                               <MenuItem mnemonicParsing="false" onAction="#loadMem" text="Load Members from File" />
                            </items>
                         </Menu>

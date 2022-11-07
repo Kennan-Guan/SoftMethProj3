@@ -70,7 +70,8 @@ public class ClassSchedule {
     }
 
     /**
-     * This method prints the class schedules.
+     * Prints all the fitness classes available
+     * @return a string with a list of fitness classes
      */
     public String printClasses() {
         String output = "";
@@ -104,6 +105,10 @@ public class ClassSchedule {
         return output;
     }
 
+    /**
+     * Loads the schedule of fitness classes from file classSchedule.txt
+     * @return a string with the schedule of fitness classes that was loaded
+     */
     public String loadFitnessClasses() {
         try {
             String output = "";

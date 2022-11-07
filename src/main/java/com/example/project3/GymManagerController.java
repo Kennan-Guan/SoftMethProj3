@@ -3,13 +3,6 @@ package com.example.project3;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.net.URL;
-import java.util.ResourceBundle;
-import java.util.Scanner;
-
 public class GymManagerController {
 
     MemberDatabase database;
@@ -73,46 +66,76 @@ public class GymManagerController {
     @FXML
     private ToggleGroup MembType;
 
+    /**
+     * Method to print list of members
+     */
     @FXML
     private void printDefault() {
         informationText.appendText("-list of members-\n" + database.print() + "-end of list-\n");
     }
 
+    /**
+     * Method to print list of members sorted alphabetically.
+     */
     @FXML
     private void printByName() {
         informationText.appendText("\n" + database.printByName());
     }
 
+    /**
+     * Method to print list of members sorted by county
+     */
     @FXML
     private void printByCounty() {
         informationText.appendText("\n" + database.printByCounty());
     }
 
+    /**
+     * Method to print list of members sorted by expiration date
+     */
     @FXML
     private void printByExpiration() {
         informationText.appendText("\n" + database.printByExpirationDate());
     }
 
+    /**
+     * Method to print list of members with membership fees.
+     */
     @FXML
-    private void printByFee() {
+    private void printWithFee() {
         informationText.appendText("\n" + database.printWithMembershipFee());
     }
 
+    /**
+     * Method to load fitness classes from a text file and print the classes loaded
+     */
     @FXML
     private void loadClasses() {
         informationText.appendText(listOfClasses.loadFitnessClasses());
     }
 
+    /**
+     * Method to print the fitness classes
+     */
     @FXML
     private void printClasses() {
         informationText.appendText(listOfClasses.printClasses());
     }
 
+    /**
+     * Method to load members from a text file and print them
+     */
     @FXML
     private void loadMem() {
         informationText.appendText(database.bulkLoad());
     }
 
+    /**
+     * Method to add inputted members into the database.
+     * Will call related methods depending on member type.
+     * Will reject if any fields are empty and print error message.
+     * @param event
+     */
     @FXML
     private void addMember(ActionEvent event) {
         if (firstName.getText().isEmpty() || lastName.getText().isEmpty() || dateOfBirth.getValue() == null || membLocation.getSelectionModel().isEmpty()) {
@@ -131,6 +154,10 @@ public class GymManagerController {
             outputMembArea.appendText("Please select a membership type.\n");
         }
     }
+
+    /**
+     * Method to add a standard member to the database.
+     */
     @FXML
     private void addStandardMember() {
         String fName = firstName.getText();
@@ -164,7 +191,6 @@ public class GymManagerController {
 
     /**
      * Helper method to add a family membership into the database.
-     *
      */
     private void addFamilyMember() {
         String fName = firstName.getText();
@@ -199,7 +225,6 @@ public class GymManagerController {
 
     /**
      * Helper method to add a premium membership into the database.
-     *
      */
     private void addPremiumMember() {
         String fName = firstName.getText();
@@ -236,7 +261,6 @@ public class GymManagerController {
 
     /**
      * Helper method that cancels and removes a member from the member database.
-     *
      */
     @FXML
     private void cancelMembership(ActionEvent event) {
@@ -258,7 +282,7 @@ public class GymManagerController {
     }
 
     /**
-     * Helper method that adds a new member into a specified fitness class.
+     * Method that adds a new member into a specified fitness class.
      */
     @FXML
     private void checkIn() {
@@ -405,6 +429,9 @@ public class GymManagerController {
         return false;
     }
 
+    /**
+     * Method that removes a member from a specified fitness class.
+     */
     @FXML
     private void checkOut() {
         if (!checkFields()) { return; }
@@ -435,6 +462,9 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * Method that adds a new guest into a specified fitness class.
+     */
     @FXML
     private void guestCheckIn() {
         if (!checkFields()) { return; }
@@ -530,6 +560,9 @@ public class GymManagerController {
         }
     }
 
+    /**
+     * Method that removes a guest from a specified fitness class.
+     */
     @FXML
     private void guestCheckOut() {
         if (!checkFields()) { return; }

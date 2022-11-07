@@ -116,7 +116,7 @@ public class GymManagerController {
     @FXML
     private void addMember(ActionEvent event) {
         if (firstName.getText().isEmpty() || lastName.getText().isEmpty() || dateOfBirth.getValue() == null || membLocation.getSelectionModel().isEmpty()) {
-            outputMembArea.appendText("Please fill out all information!");
+            outputMembArea.appendText("Please fill out all information!\n");
             return;
         }
         if (standardButton.isSelected()) {
@@ -129,7 +129,7 @@ public class GymManagerController {
             addPremiumMember();
         }
         else {
-            outputMembArea.appendText("Please select a membership type.");
+            outputMembArea.appendText("Please select a membership type.\n");
         }
     }
     @FXML
@@ -242,7 +242,7 @@ public class GymManagerController {
     @FXML
     private void cancelMembership(ActionEvent event) {
         if (firstName.getText().isEmpty() || lastName.getText().isEmpty() || dateOfBirth.getValue() == null ) {
-            outputMembArea.appendText("Please fill out first name, last name, and date of birth!");
+            outputMembArea.appendText("Please fill out first name, last name, and date of birth!\n");
             return;
         }
         String fName = firstName.getText();

@@ -127,9 +127,6 @@ public class GymManagerController {
         else if (premiumButton.isSelected()) {
             addPremiumMember();
         }
-        else {
-            outputMembArea.appendText("Please select a membership type.\n");
-        }
     }
     @FXML
     private void addStandardMember() {

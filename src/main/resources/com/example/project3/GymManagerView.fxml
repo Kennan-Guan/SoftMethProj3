@@ -37,7 +37,7 @@
                   <TextArea fx:id="outputMembArea" layoutX="20.0" layoutY="292.0" prefHeight="220.0" prefWidth="560.0" />
                   <HBox alignment="CENTER" layoutX="198.0" layoutY="176.0" prefHeight="49.0" prefWidth="292.0">
                      <children>
-                        <RadioButton fx:id="standardButton" mnemonicParsing="false" text="Standard">
+                        <RadioButton fx:id="standardButton" mnemonicParsing="false" selected="true" text="Standard">
                            <padding>
                               <Insets right="10.0" />
                            </padding>

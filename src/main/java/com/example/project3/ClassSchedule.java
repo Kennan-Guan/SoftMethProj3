@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class ClassSchedule {
     private FitnessClass[] classes;
     private int numClasses;
-    private static int ARRAYGROWTH = 4;
+    private static final int ARRAYGROWTH = 4;
 
     /**
      * Constructor for class schedule.

@@ -117,15 +117,14 @@ public class GymManagerController {
     private void addMember(ActionEvent event) {
         if (firstName.getText().isEmpty() || lastName.getText().isEmpty() || dateOfBirth.getValue() == null || membLocation.getSelectionModel().isEmpty()) {
             outputMembArea.appendText("Please fill out all information!\n");
-            return;
         }
-        if (standardButton.isSelected()) {
+        else if (standardButton.isSelected()) {
             addStandardMember();
         }
-        if (familyButton.isSelected()) {
+        else if (familyButton.isSelected()) {
             addFamilyMember();
         }
-        if (premiumButton.isSelected()) {
+        else if (premiumButton.isSelected()) {
             addPremiumMember();
         }
         else {
@@ -189,7 +188,7 @@ public class GymManagerController {
         } else if (!dayOfBirth.isEighteen(dayOfBirth)) {
             outputMembArea.appendText("DOB " + dayOfBirth + ": must be 18 or older to join!\n");
         } else {
-            Member newEntry = new Family(fName + " " + lName + " " + dayOfBirth.toString() + " " + city + "\n");
+            Member newEntry = new Family(fName + " " + lName + " " + dayOfBirth.toString() + " " + city);
             if (database.add(newEntry)) {
                 outputMembArea.appendText(newEntry.getFname() + " " + newEntry.getLname() + " added.\n");
             } else {
@@ -225,7 +224,7 @@ public class GymManagerController {
         } else if (!dayOfBirth.isEighteen(dayOfBirth)) {
             outputMembArea.appendText("DOB " + dayOfBirth + ": must be 18 or older to join!\n");
         } else {
-            Member newEntry = new Premium(fName + " " + lName + " " + dayOfBirth.toString() + " " + city + "\n");
+            Member newEntry = new Premium(fName + " " + lName + " " + dayOfBirth.toString() + " " + city);
             if (database.add(newEntry)) {
                 outputMembArea.appendText(newEntry.getFname() + " " + newEntry.getLname() + " added.\n");
             } else {

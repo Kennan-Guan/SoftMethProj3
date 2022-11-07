@@ -185,7 +185,7 @@ public class GymManagerController {
         } else if (!dayOfBirth.isEighteen(dayOfBirth)) {
             outputMembArea.appendText("DOB " + dayOfBirth + ": must be 18 or older to join!\n");
         } else {
-            Member newEntry = new Family(fName + " " + lName + " " + dayOfBirth.toString() + " " + city);
+            Member newEntry = new Family(fName + " " + lName + " " + dayOfBirth + " " + city);
             if (database.add(newEntry)) {
                 outputMembArea.appendText(newEntry.getFname() + " " + newEntry.getLname() + " added.\n");
             } else {
@@ -221,7 +221,7 @@ public class GymManagerController {
         } else if (!dayOfBirth.isEighteen(dayOfBirth)) {
             outputMembArea.appendText("DOB " + dayOfBirth + ": must be 18 or older to join!\n");
         } else {
-            Member newEntry = new Premium(fName + " " + lName + " " + dayOfBirth.toString() + " " + city);
+            Member newEntry = new Premium(fName + " " + lName + " " + dayOfBirth + " " + city);
             if (database.add(newEntry)) {
                 outputMembArea.appendText(newEntry.getFname() + " " + newEntry.getLname() + " added.\n");
             } else {

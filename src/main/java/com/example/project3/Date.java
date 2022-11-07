@@ -51,6 +51,13 @@ public class Date implements Comparable<Date> {
         year = Integer.parseInt(split_date[2]);
     }
 
+    public Date(String date, int DatePickerTrue) {
+        String[] split_date = date.split("-");
+        month = Integer.parseInt(split_date[1]);
+        day = Integer.parseInt(split_date[2]);
+        year = Integer.parseInt(split_date[0]);
+    }
+
     /**
      * Constructs a date object given an expiration.
      * @param setExpiration the expiration timeframe

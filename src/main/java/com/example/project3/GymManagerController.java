@@ -263,13 +263,7 @@ public class GymManagerController {
      */
     @FXML
     private void checkIn() {
-        if (firstNameFitness.getText().isEmpty() || lastNameFitness.getText().isEmpty() || dateOfBirthFitness.getValue() == null
-                || classType.getSelectionModel().getSelectedItem() == null || gymLocation.getSelectionModel().getSelectedItem() == null
-                ||  fitnessInstructor.getSelectionModel().getSelectedItem() == null) {
-            fitnessText.appendText("Please fill in all information!\n");
-            return;
-        }
-
+        if (!checkFields()) { return; }
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();
         Date DOB = new Date(dateOfBirthFitness.getValue().toString(), 1);
@@ -300,15 +294,27 @@ public class GymManagerController {
                     fitnessText.appendText(storedEntry.getFname() + " " + storedEntry.getLname() + " checked in " + checkInClass + "\n");
                     fitnessText.appendText("- Participants -\n");
                     for (int i = 0; i < checkInClass.getAttendance().size(); i++) {
-                        fitnessText.appendText("   ");
-                        fitnessText.appendText(checkInClass.getAttendance().get(i).toString() + "\n");
+                        fitnessText.appendText("   " + checkInClass.getAttendance().get(i).toString() + "\n");
                     }
-                    fitnessText.appendText("\n");
                 } else {
                     fitnessText.appendText(storedEntry.getFname() + " " + storedEntry.getLname() + " already checked in.\n");
                 }
             }
         }
+    }
+
+    /**
+     * Helper method to determine if all fields are set in the Fitness tab.
+     * @return true if all fields are filled, false otherwise.
+     */
+    private boolean checkFields() {
+        if (firstNameFitness.getText().isEmpty() || lastNameFitness.getText().isEmpty() || dateOfBirthFitness.getValue() == null
+                || classType.getSelectionModel().getSelectedItem() == null || gymLocation.getSelectionModel().getSelectedItem() == null
+                ||  fitnessInstructor.getSelectionModel().getSelectedItem() == null) {
+            fitnessText.appendText("Please fill in all information!\n");
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -402,13 +408,7 @@ public class GymManagerController {
 
     @FXML
     private void checkOut() {
-        if (firstNameFitness.getText().isEmpty() || lastNameFitness.getText().isEmpty() || dateOfBirthFitness.getValue() == null
-                || classType.getSelectionModel().getSelectedItem() == null || gymLocation.getSelectionModel().getSelectedItem() == null
-                ||  fitnessInstructor.getSelectionModel().getSelectedItem() == null) {
-            fitnessText.appendText("Please fill in all information!\n");
-            return;
-        }
-
+        if (!checkFields()) { return; }
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();
         Date DOB = new Date(dateOfBirthFitness.getValue().toString(), 1);
@@ -438,12 +438,7 @@ public class GymManagerController {
 
     @FXML
     private void guestCheckIn() {
-        if (firstNameFitness.getText().isEmpty() || lastNameFitness.getText().isEmpty() || dateOfBirthFitness.getValue() == null
-                || classType.getSelectionModel().getSelectedItem() == null || gymLocation.getSelectionModel().getSelectedItem() == null
-                ||  fitnessInstructor.getSelectionModel().getSelectedItem() == null) {
-            fitnessText.appendText("Please fill in all information!\n");
-            return;
-        }
+        if (!checkFields()) { return; }
 
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();
@@ -538,12 +533,7 @@ public class GymManagerController {
 
     @FXML
     private void guestCheckOut() {
-        if (firstNameFitness.getText().isEmpty() || lastNameFitness.getText().isEmpty() || dateOfBirthFitness.getValue() == null
-                || classType.getSelectionModel().getSelectedItem() == null || gymLocation.getSelectionModel().getSelectedItem() == null
-                ||  fitnessInstructor.getSelectionModel().getSelectedItem() == null) {
-            fitnessText.appendText("Please fill in all information!\n");
-            return;
-        }
+        if (!checkFields()) { return; }
 
         String fName = firstNameFitness.getText();
         String lName = lastNameFitness.getText();

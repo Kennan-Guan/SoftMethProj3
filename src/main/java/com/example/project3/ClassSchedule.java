@@ -98,37 +98,35 @@ public class ClassSchedule {
     /**
      * This method prints the class schedules.
      */
-    public void printClasses() {
+    public String printClasses() {
+        String output = "";
         if (numClasses == 0) {
-            System.out.println("Fitness class schedule is empty.");
-            System.out.println();
+            return "Fitness class schedule is empty.\n";
         }
         else {
-            System.out.println("-Fitness classes-");
+            output += "-Fitness classes-\n";
             for (int i = 0; i < numClasses; i++) {
-                System.out.println(classes[i]);
+                output += classes[i] + "\n";
                 Member[] attendance = classes[i].getList();
                 if (attendance.length != 0) {
-                    System.out.println("- Participants -");
+                    output += "- Participants -\n";
                 }
                 for (int j = 0; j < attendance.length; j++) {
-                    System.out.print("   ");
-                    System.out.println(attendance[j]);
+                    output += "   ";
+                    output += attendance[j] + "\n";
                 }
 
                 if (classes[i].getGuests().size() != 0) {
-                    System.out.println("- Guests -");
+                    output += "- Guests -\n";
                 }
                 for (int k = 0; k < classes[i].getGuestList().length; k++) {
-                    System.out.print("   ");
-                    System.out.println(classes[i].getGuestList()[k]);
+                    output += "   ";
+                    output += classes[i].getGuestList()[k] + "\n";
                 }
 
             }
-            System.out.println("-end of class list.");
-            System.out.println();
+            output += "-end of class list.\n";
         }
+        return output;
     }
-
-
 }

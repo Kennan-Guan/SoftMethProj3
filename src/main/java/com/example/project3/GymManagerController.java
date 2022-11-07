@@ -75,7 +75,7 @@ public class GymManagerController {
 
     @FXML
     private void printDefault() {
-        informationText.appendText("\n" + database.print());
+        informationText.appendText("-list of members-\n" + database.print() + "-end of list-\n");
     }
 
     @FXML

@@ -79,7 +79,7 @@ public class GymManagerController {
             informationText.appendText(database.print());
         }
         else {
-            informationText.appendText("-list of members-\n" + database.print() + "-end of list-\n");
+            informationText.appendText("\n" + "-list of members-\n" + database.print() + "-end of list-\n");
         }
     }
 
@@ -292,7 +292,7 @@ public class GymManagerController {
                 } else if (Location.valueOf(gym.toUpperCase()) != storedEntry.getLocation() && !(storedEntry instanceof Family)) {
                     fitnessText.appendText(storedEntry.getFname() + " " + storedEntry.getLname() + " checking in " + checkInClass.getLocation() + " - standard membership location restriction.\n");
                 } else if (checkInClass.addMember(storedEntry)) {
-                    fitnessText.appendText(storedEntry.getFname() + " " + storedEntry.getLname() + " checked in " + checkInClass + "\n");
+                    fitnessText.appendText("\n" + storedEntry.getFname() + " " + storedEntry.getLname() + " checked in " + checkInClass + "\n");
                     fitnessText.appendText("- Participants -\n");
                     for (int i = 0; i < checkInClass.getAttendance().size(); i++) {
                         fitnessText.appendText("   " + checkInClass.getAttendance().get(i).toString() + "\n");
@@ -463,7 +463,7 @@ public class GymManagerController {
             } else if (!(storedEntry instanceof Family)) {
                 fitnessText.appendText("Standard membership - guest check-in is not allowed.\n");
             } else if (storedEntry.getLocation() != Location.valueOf(gym.toUpperCase())) {
-                System.out.println(fName + " " + lName + " Guest checking in " + Location.valueOf(gym.toUpperCase()) + " - guest location restriction.\n");
+                fitnessText.appendText(fName + " " + lName + " Guest checking in " + Location.valueOf(gym.toUpperCase()) + " - guest location restriction.\n");
             } else if (!(storedEntry instanceof Premium)) {
                 checkInFamily(storedEntry, checkInClass);
             } else {

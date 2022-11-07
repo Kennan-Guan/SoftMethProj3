@@ -275,7 +275,7 @@ public class MemberDatabase {
                 this.add(newMem);
             }
             output += "-list of members loaded-\n";
-            output += this.print() + "\n";
+            output += this.print();
             output += "-end of list-\n";
             return output;
         } catch (FileNotFoundException e) {

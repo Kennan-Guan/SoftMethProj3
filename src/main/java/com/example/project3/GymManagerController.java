@@ -188,7 +188,7 @@ public class GymManagerController {
             }
         }
         if (!validCity) {
-            System.out.println(city + ": invalid location!\n");
+            outputMembArea.appendText(city + ": invalid location!\n");
         } else if (!dayOfBirth.isValid()) {
             outputMembArea.appendText("DOB " + dayOfBirth + ": invalid calendar date!\n");
         } else if (!dayOfBirth.isFuture(dayOfBirth)) {

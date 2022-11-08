@@ -413,7 +413,7 @@ public class GymManagerController {
                 return true;
             }
         }
-        fitnessText.appendText(gymLocation + " - invald location.\n");
+        fitnessText.appendText(gymLocation + " - invalid location.\n");
         return false;
     }
 

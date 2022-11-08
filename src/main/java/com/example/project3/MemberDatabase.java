@@ -252,7 +252,7 @@ public class MemberDatabase {
     /**
      * This method prints the database as is with the membership fee of each member also printed.
      * Uses Member class toString() method to return textual representation of each member, along with membership fee.
-     * @return a string contaning all members with membership fees.
+     * @return a string containing all members with membership fees.
      */
     public String printWithMembershipFee() {
         String output = "";
@@ -279,7 +279,7 @@ public class MemberDatabase {
             }
             output += "-list of members loaded-\n";
             output += this.print();
-            output += "-end of list-\n";
+            output += "-end of list-\n\n";
             return output;
         } catch (FileNotFoundException e) {
             return "memberList.txt file not found\n";

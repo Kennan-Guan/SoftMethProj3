@@ -14,6 +14,10 @@ public class GymManagerController {
 
     private static final int STANDARDEXPIRATION = 4;
 
+    private static final int PREMIUMPASSES = 3;
+
+    private static final int FAMILYPASSES = 1;
+
     @FXML
     private DatePicker dateOfBirth;
 
@@ -606,6 +610,10 @@ public class GymManagerController {
             fitnessText.appendText(DOB + ": invalid calendar date!\n");
         } else if (storedEntry == null) {
             fitnessText.appendText(fName + " " + lName + " " + dateOfBirth + " is not in the database.\n");
+        } else if (storedEntry instanceof Family && !(storedEntry instanceof Premium) && ((Family) storedEntry).getGuestPasses() == FAMILYPASSES) {
+            fitnessText.appendText(fName + " " + lName + " " + dateOfBirth + " has checked in no guests.\n");
+        } else if (storedEntry instanceof Premium && ((Premium) storedEntry).getGuestPasses() == PREMIUMPASSES) {
+            fitnessText.appendText(fName + " " + lName + " " + dateOfBirth + " has checked in no guests.\n");
         } else {
             FitnessClass checkInClass = findClass(listOfClasses.getClasses(), gym, instructor, className);
             if (checkInClass != null) {

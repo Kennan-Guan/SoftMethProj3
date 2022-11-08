@@ -269,6 +269,10 @@ public class MemberDatabase {
         return output;
     }
 
+    /**
+     * This method loads the member database with a historical list of gym members from the memberList.txt file.
+     * @return a String representing the loaded database from the given file, or an exception statement if there is no file to load from.
+     */
     public String bulkLoad(){
         String output = "";
         try {
